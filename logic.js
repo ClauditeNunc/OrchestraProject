@@ -73,15 +73,15 @@ function createInstrumentCard(instrument) {
     instrumentName.textContent = instrument.name;
     
     //Prep the audio format
-    const audio = new Audio(`audio/audio_${instrument.name.toLowerCase()}.mp3`);
+    const audio = new Audio(`audio/${instrument.name.toLowerCase()}.mp3`);
     audio.preload = "auto"; 
     
     instrumentCard.addEventListener("click", () => {
         audio.currentTime = 0;
+        console.log(audio);
+        console.log(instrumentName);
         audio.play().catch(error => {
             console.error('Error playing audio:', error);
-            console.log(audio);
-            console.log(instrumentName);
         });
     });
     
