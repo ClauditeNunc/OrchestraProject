@@ -88,7 +88,7 @@ function createInstrumentCard(instrument) {
         instrumentAction = document.createElement("p");
         instrumentAction.textContent = instrument.pressKey();
     }
-    
+
     //Add the instruments to the div
     instrumentCard.appendChild(instrumentName);
     if (instrumentAction) {
@@ -97,3 +97,10 @@ function createInstrumentCard(instrument) {
 
     return instrumentCard;
 }
+
+// Show them on the page
+const instrumentsContainer = document.getElementById("instruments-container");
+instruments.forEach(instrument => {
+    const instrumentCard = createInstrumentCard(instrument);
+    instrumentsContainer.appendChild(instrumentCard);
+});
