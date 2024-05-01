@@ -73,13 +73,11 @@ function createInstrumentCard(instrument) {
     instrumentName.textContent = instrument.name;
     
     //Prep the audio format
-    const audio = new Audio(`audio/${instrument.name.toLowerCase()}.mp3`);
+    const audio = new Audio(`ClauditeNunc/OrchestraProject/audio/${instrument.name.toLowerCase()}.mp3`);
     audio.preload = "auto"; 
     
     instrumentCard.addEventListener("click", () => {
         audio.currentTime = 0;
-        console.log(audio);
-        console.log(instrumentName);
         audio.play().catch(error => {
             console.error('Error playing audio:', error);
         });
