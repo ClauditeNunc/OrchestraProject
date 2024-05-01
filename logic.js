@@ -15,7 +15,7 @@ class StringInstrument extends Instrument {
         super(name);
     }
 
-    tune() {
+    play() {
         return `Tune ${this.name}`;
     }
 }
@@ -25,7 +25,7 @@ class WindInstrument extends Instrument {
         super(name);
     }
 
-    blow() {
+    play() {
         return `Blow into ${this.name}`;
     }
 }
@@ -35,7 +35,7 @@ class PercussionInstrument extends Instrument {
         super(name);
     }
 
-    strike() {
+    play() {
         return `Strike ${this.name}`;
     }
 }
@@ -45,7 +45,7 @@ class KeyboardInstrument extends Instrument {
         super(name);
     }
 
-    pressKey() {
+    play() {
         return `Press keys on ${this.name}`;
     }
 }
@@ -83,28 +83,15 @@ function createInstrumentCard(instrument) {
         });
     });
     
+    //Change it so that we don't need a specific if else statement
+    const actionPhrase = instrument.play();
 
-    //Prepare the instruments with an action depending on type
-    let instrumentAction;
-    if (instrument instanceof StringInstrument) {
-        instrumentAction = document.createElement("p");
-        instrumentAction.textContent = instrument.tune();
-    } else if (instrument instanceof WindInstrument) {
-        instrumentAction = document.createElement("p");
-        instrumentAction.textContent = instrument.blow();
-    } else if (instrument instanceof PercussionInstrument) {
-        instrumentAction = document.createElement("p");
-        instrumentAction.textContent = instrument.strike();
-    } else if (instrument instanceof KeyboardInstrument) {
-        instrumentAction = document.createElement("p");
-        instrumentAction.textContent = instrument.pressKey();
-    }
+    const instrumentAction = document.createElement("p");
+    instrumentAction.textContent = actionPhrase;
 
     //Add the instruments to the div
     instrumentCard.appendChild(instrumentName);
-    if (instrumentAction) {
-        instrumentCard.appendChild(instrumentAction);
-    }
+    instrumentCard.appendChild(instrumentAction);
 
     return instrumentCard;
 }
