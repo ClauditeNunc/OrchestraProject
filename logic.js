@@ -76,11 +76,13 @@ function createInstrumentCard(instrument) {
     const audio = new Audio(`${instrument.name.toLowerCase()}.mp3`);
     audio.preload = "auto"; 
     
-    //Play audio depending on name of instrument
     instrumentCard.addEventListener("click", () => {
         audio.currentTime = 0;
-        audio.play();
+        audio.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
     });
+    
 
     //Prepare the instruments with an action depending on type
     let instrumentAction;
