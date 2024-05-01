@@ -50,3 +50,17 @@ class KeyboardInstrument extends Instrument {
     }
 }
 
+// All instruments to be used
+const instruments = [
+    new StringInstrument("🎸Guitar"),
+    new StringInstrument("🎻Violin"),
+    new StringInstrument("𓏢Harp"),
+    new WindInstrument("🦯Flute"),
+    new WindInstrument("🎷Saxophone"),
+    new WindInstrument("🎺Trumpet"),
+    new PercussionInstrument("🥁Drum"),
+    new PercussionInstrument("🎛️Xylophone"),
+    new PercussionInstrument("⚙Tambourine"),
+    new PercussionInstrument("△Triangle"),
+    new KeyboardInstrument("🎹Piano"),
+];
