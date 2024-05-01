@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 1080px;
+    background-color: #f2f2f2;
+    background-image: url(orchestraBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+}
+
+.concert-hall {
+    margin-top: 150px;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.instruments-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
