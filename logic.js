@@ -72,6 +72,15 @@ function createInstrumentCard(instrument) {
     const instrumentName = document.createElement("h2");
     instrumentName.textContent = instrument.name;
     
+    //Prep the audio format
+    const audio = new Audio(`audio/${instrument.name.toLowerCase()}.mp3`);
+    audio.preload = "auto"; 
+    
+    //Play audio depending on name of instrument
+    instrumentCard.addEventListener("click", () => {
+        audio.currentTime = 0;
+        audio.play();
+    });
 
     //Prepare the instruments with an action depending on type
     let instrumentAction;
