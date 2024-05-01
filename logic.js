@@ -73,7 +73,7 @@ function createInstrumentCard(instrument) {
     instrumentName.textContent = instrument.name;
     
     //Prep the audio format
-    const audio = new Audio(`../audio/${instrument.name}.mp3`);
+    const audio = new Audio(`audio/${instrument.name}.mp3`);
     audio.preload = "auto"; 
     
     instrumentCard.addEventListener("click", () => {
