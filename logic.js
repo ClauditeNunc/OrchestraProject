@@ -64,3 +64,36 @@ const instruments = [
     new PercussionInstrument("△Triangle"),
     new KeyboardInstrument("🎹Piano"),
 ];
+
+function createInstrumentCard(instrument) {
+    const instrumentCard = document.createElement("div");
+    instrumentCard.classList.add("instrument-card");
+    
+    const instrumentName = document.createElement("h2");
+    instrumentName.textContent = instrument.name;
+    
+
+    //Prepare the instruments with an action depending on type
+    let instrumentAction;
+    if (instrument instanceof StringInstrument) {
+        instrumentAction = document.createElement("p");
+        instrumentAction.textContent = instrument.tune();
+    } else if (instrument instanceof WindInstrument) {
+        instrumentAction = document.createElement("p");
+        instrumentAction.textContent = instrument.blow();
+    } else if (instrument instanceof PercussionInstrument) {
+        instrumentAction = document.createElement("p");
+        instrumentAction.textContent = instrument.strike();
+    } else if (instrument instanceof KeyboardInstrument) {
+        instrumentAction = document.createElement("p");
+        instrumentAction.textContent = instrument.pressKey();
+    }
+    
+    //Add the instruments to the div
+    instrumentCard.appendChild(instrumentName);
+    if (instrumentAction) {
+        instrumentCard.appendChild(instrumentAction);
+    }
+
+    return instrumentCard;
+}
