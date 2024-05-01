@@ -24,3 +24,32 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.instrument-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 75px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer; 
+    background-color:rgba(149,21,40,0.5);
+    transition-duration: 0.3s;
+}
+
+.instrument-card:hover {
+    background-color: #951528;
+}
+
+
+.instrument-card h2 {
+    margin:1rem;
+}
+
+.instrument-card p {
+    margin:1rem;
+}
